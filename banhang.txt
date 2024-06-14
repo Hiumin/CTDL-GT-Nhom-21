@@ -1,0 +1,2 @@
+but chi, 5, 101, 5000, abc
+thuoc ke, 10, 102, 10000, xyz
