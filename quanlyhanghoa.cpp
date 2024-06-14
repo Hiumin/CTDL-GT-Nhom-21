@@ -194,8 +194,6 @@ void sortprice (node &a){
 }
 	
 }
-//ham tim kiem hang hoa theo ten
-}
 //menu quan ly hang hoa
 void menu(node &h){
 	bool isExit = false;
