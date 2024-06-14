@@ -237,8 +237,9 @@ do
 			int a;
 			cout << "nhap ma hang hoa" << endl;
 			cin >> a;
-			if(!searchNode(h, a)) cout << "Khong co mat hang nao co ma san pham nhu tren" << endl;
+			if(searchNode(h, a)==0) cout << "Khong co mat hang nao co ma san pham nhu tren" << endl;
 			else in(searchNode(h,a)->info);
+			break;
 		}
 	case 3:
 		sortname(h);
