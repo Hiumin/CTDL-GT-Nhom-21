@@ -402,12 +402,10 @@ void menuNhanvien(){
         cout << "3. Tim kiem nhan vien." << endl;
         cout << "4. Chinh sua thong tin nhan vien." << endl;
         cout << "5. Xoa nhan vien." << endl;
-        cout << "6. Sap xep nhan vien." << endl;
-        cout << "7. Cham cong." << endl;
-        cout << "8. Kiem tra luong nhan vien." << endl;
-        cout << "9. Tim luong MAX và MIN theo thang." << endl;
-        cout << "10. In hoa don luong." << endl;
-        cout << "11. Thoat." << endl;
+        cout << "6. Cham cong." << endl;
+        cout << "7. Kiem tra luong nhan vien." << endl;
+        cout << "8. In hoa don luong." << endl;
+        cout << "9. Thoat." << endl;
         cout << "Nhap lua chon: ";
         cin >> choice;
 
@@ -609,20 +607,8 @@ void menuNhanvien(){
             break;
         }
 
-        case 6:{
-            bool thutu;
-            cout << "Thu tu sap xep theo so ID:" << endl;
-            cout << "1. Tang dan." << endl;
-            cout << "0. Giam dan." << endl;
-            cout << "Chon thu tu: ";
-            cin >> thutu;
-            sapxepNhanVien(NV, thutu);
-            cout << "Danh sach sau khi sap xep: " << endl;
-            displayQuanlynhanvien(NV);
-            break;
-        }
 
-        case 7:{
+        case 6:{
             luongtheongay K;
             long ID;
             PNodeNV P = NULL;
@@ -701,7 +687,7 @@ void menuNhanvien(){
             break;
         }
 
-        case 8:{
+        case 7:{
             long K;
             int ngaycc;
             int thangcc;
@@ -709,7 +695,7 @@ void menuNhanvien(){
             PNodeNV P;
             bool vonglap = true;
             do {
-                cout << "Nhap ID cua nhan vien can chinh sua(Nhan 0 de tro ve menu): ";
+                cout << "Nhap ID cua nhan vien can tim kiem(Nhan 0 de tro ve menu): ";
                 cin >> K;
                 P = timkiemID(NV,K);
                 if(K == 0){
@@ -772,67 +758,8 @@ void menuNhanvien(){
             }
             break;
         }
-
-        case 9:{
-            bool vonglap = true;
-            int thang;
-            int nam;
-            while(vonglap){
-                char chon;
-                cout << "Luong MAX va MIN cua" << endl;
-                cout << "A. Toan bo nhan vien." << endl;
-                cout << "B. Nhan vien xac dinh." << endl;
-                cout << "C. Thoat." << endl;
-                cout << "Nhap lua chon: ";
-                cin >> chon;
-                switch (chon){
-                case 'A':
-                case 'a':{
-                    cout << "Nhap thang: ";
-                    cin >> thang;
-                    cout << "Nhap nam: ";
-                    cin >> nam;
-                    timLuongMaxMinThang(NV,thang,nam);
-                    break;
-                }
-                case 'B':
-                case 'b':{
-                    long K;
-                    PNodeNV P = NULL;
-                    do {
-                        cout << "Nhap ID cua nhan vien can chinh sua(Nhan 0 de tro ve menu): ";
-                        cin >> K;
-                        P = timkiemID(NV,K);
-                        if(K == 0){
-                            vonglap = false;
-                            cout << "Thoat thanh cong!";
-                            break;
-                        }
-                        if(P == NULL){
-                            cout << "Khong tim thay nhan vien. Vui long thu lai!" << endl;
-                        }else{
-                            cout << "Nhap thang: ";
-                            cin >> thang;
-                            cout << "Nhap nam: ";
-                            cin >> nam;
-                            timLuongMaxMinThangMotNhanVien(P,thang,nam);
-                        }
-                    }while(vonglap && P == NULL);
-                    break;
-                }
-                case 'C':
-                case 'c':
-                    vonglap = false;
-                    break;
-                default:
-                    cout << "Vui long thu lai!" << endl;
-                    break;
-                }
-            }
-            break;
-        }
-
-        case 10:{
+       
+        case 8:{
             double tongtienluongThang = 0.0;
             PNodeNV P = NV;
             int thangcc;
@@ -866,7 +793,7 @@ void menuNhanvien(){
             break;
 
         }
-        case 11:
+        case 9:
             cout << "Da thoat thanh cong!" << endl;
             return;
         
